@@ -3,8 +3,7 @@ dispatch() 메소드 실행 전후에 원하는 작업을 할 수 있게 하는 
 
 ### @Logger Middleware (로그 기록)
 **1-1. 미들웨어 생성**
-<pre><code>
-<b>loggerMiddleware.js</b>
+<pre><code><b>loggerMiddleware.js</b>
 
 const loggerMiddleware = store => next => action => { 
     console.log('현재 상태', store.getState());
@@ -25,8 +24,7 @@ export default loggerMiddleware;
 
 
 **1-2. 미들웨어 적용**
-<pre><code>
-<b>store.js</b>
+<pre><code><b>store.js</b>
 
 import { createStore, applyMiddleware } from 'redux';
 import modules from './modules';
@@ -40,8 +38,7 @@ export default store;
 ----
 **2. redux-logger 라이브러리 사용하기**
 <pre><code>$ yarn add redux-logger //redux-logger 설치</code></pre>
-<pre><code>
-<b>store.js</b>
+<pre><code><b>store.js</b>
 
 import { createStore, applyMiddleware } from 'redux';
 import modules from './modules';
