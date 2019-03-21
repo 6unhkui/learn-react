@@ -58,5 +58,95 @@ but, 주로 로그 기록시, logger middleware보단 개발자도구인 Redux D
 **redux-thunk :** 객체가 아닌 함수도 디스패치 할 수 있게 하여, 일반 액션 객체로는 할 수 없는 작업들을 가능하도록 함. <br/>이때 생성되는 함수는 액션 생성 함수가 아니라 <b>thunk 생성 함수</b>라고 한다. <br/>thunk 생성 함수에서는 dispatch와 getState를 파라미터로 가지는 새로운 함수를 만들어서 반환해야 한다.<br/>
 thunk 생성 함수 내부에서는 네트워크 요청을 해도 되며, 또 다른 종류의 액션들을 여러번 디스패치 할 수도 있다.
 
-**1. redux-thunk 설치 및 적용**
-<pre><code>$ yarn add redux-thunk</code></pre>
+**redux-thunk와 axios를 이용한 웹 요청 처리**
+**1.redux-thunk, axios 설치**
+<pre><code>$ yarn add redux-thunk axios</code></pre>
+
+**2.post module**
+<pre><code><b>src/modules/post.js</b>
+
+import { handleActions, createAction } from 'redux-actions';
+import axios from 'axios';
+
+function getPostAPI(postId) {
+    return axios.get(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+}
+
+const GET_POST_PEDNING = 'GET_POST_PEDNING';
+const GET_POST_SUCCESS = 'GET_POST_SUCCESS';
+const GET_POST_FAILURE = 'GET_POST_FAILURE';
+
+const getPostPending = createAction(GET_POST_PEDNING);
+const getPostSuccess = createAction(GET_POST_SUCCESS);
+const getPostFailure = createAction(GET_POST_FAILURE);
+
+export const getPost = (postId) => dispatch => {
+    //먼저 요청이 시작함을 알림
+    dispatch(getPostPending());
+    
+    return getPostAPI(postId)
+           .then(
+               (res) => {
+                   dispatch(getPostSuccess(res)); 
+                   return res;
+                })
+            .catch(
+                error => {
+                    dispatch(getPostFailure(error));
+                    return(error);
+                });
+}
+
+const initialState = {
+    pending : false,
+    error : false,
+    data : {
+        title : '',
+        body : ''
+    }
+}
+
+export default handleActions({
+    [GET_POST_PEDNING] : (state, action) => {
+        return {
+            ...state,
+            pending : true,
+            error : false
+        };
+    },
+    [GET_POST_SUCCESS] : (state, action) => {
+        const {title, body} = action.payload.data;
+        
+        return {
+            ...state,
+            pending : false,
+            data : {
+                title,
+                body
+            }
+        };
+    },
+    [GET_POST_FAILURE] : (state, action) => {
+        return {
+            ...state,
+            pending : false,
+            error : true
+        };
+    }
+}, initialState);
+
+
+
+</code></pre>
+
+<pre><code><b>src/modules/index.js</b>
+
+import { combineReducers } from 'redux';
+import counter from './counter';
+import post from './post';
+
+export default combineReducers({
+    counter,
+    post
+});
+</code></pre>
