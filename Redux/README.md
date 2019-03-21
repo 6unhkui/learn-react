@@ -1,4 +1,4 @@
-# REDUX
+# Redux
 <img src="https://user-images.githubusercontent.com/41765537/54652703-0f923e80-4afb-11e9-86aa-099d7783c104.png" width="350"></img><br/>
 **: Flux 아키텍쳐를 구현한 라이브러리로, JavaScript 애플리케이션의 state management. SPA에서 state를 관리할때 유용하게 사용된다.** <br/>
 
