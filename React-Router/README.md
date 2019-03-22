@@ -14,5 +14,55 @@
 ## Router
 : 
 
+#### React-Router 설치
+<pre><code>$ yarn add react-router-dom</code></pre>
+
+#### NOTH_PATH 설정 - 파일 import시 절대 경로로 불러오도록
+<pre><code><b>package.json에서 script 설정 부분</b>
+
+"start": "NODE_PATH=src react-scripts start",
+"build": "NODE_PATH=src react-scripts build",</code></pre>
+
+- Windows의 경우
+<pre><code>$ yarn add cross-env</code></pre>
+<pre><code><b>package.json에서 script 설정 부분</b>
+
+"start": "<b>cross-env</b> NODE_PATH=src react-scripts start",
+"build": "<b>cross-env</b> NODE_PATH=src react-scripts build",</code></pre>
+
+#### BrowserRouter 적용 - HTML5의 history API를 사용하여 페이지의 리로드 없이 주소를 교체할 수 있도록
+<pre><code><b>src/Root.js //최상위 루트 컴포넌트</b>
+
+(...)
+import {BrowserRouter as Router} from 'react-router-dom';
+import App from './App';
+
+const Root = () => {
+   return (
+      <'Router>
+          <'App/>
+      <'/Router>
+  );
+};
+</code></pre>
+
+#### 라우트 설정
+<pre><code><b>src/App.js</b>
+
+(...)
+const App = () => {
+   return (
+      <'div>
+         <'Route exact path="/" component={Home}/> //exact는 주소가 path와 정확히 일치할때만 보이도록 설정하는 것
+         <'Route path="/about" component={About}/>
+      <'/div>
+  );
+};
+</code></pre>
+
+#### 라우트 파라미터
+라우트의 경로로 특정 값을 넣는 방법 : 1)parmas 사용 2)Query String 사용 
+
+
 #### 자세한 실습 내용은 [velopert님 블로그](https://velopert.com/3417) 참고
 참고) https://poiemaweb.com/js-spa / https://linked2ev.github.io/devlog/2018/08/01/WEB-1.-What-is-SPA/ /
