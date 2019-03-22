@@ -13,3 +13,7 @@
 ---
 
 ## MST (Mobx State Tree)
+
+
+
+**#모든 학습 내용은 [velopert님 블로그](https://velopert.com/3417)와 리액트를 다루는 기술 참고**
