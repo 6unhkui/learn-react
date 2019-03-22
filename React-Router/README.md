@@ -1,5 +1,5 @@
 # React-Router
-### SPA (Single Page Application)
+## SPA (Single Page Application)
 : 단일 페이지 어플리케이션. <br/>
   전통적인 페이지는 여러 페이지로 구성되어 유저가 요청할때마다 서버에서 리소스와 데이터를 전달받아 <br/>
   해석한 후 렌더링한다. 웹에서 제공하는 데이터량이 많아지면서 속도 문제가 야기되고, <br/>
@@ -11,7 +11,8 @@
   SPA에서는 뷰 렌더링을 유저 웹 브라우저에서 담당하고, 애플리케이션을 우선 웹 브라우저에 로드시킨 후 <br/>
   필요한 데이터만 전달받아 보여주기 때문에 전체적인 트래픽을 감소할 수 있다. <br/><br/>
   
-### Router
-  
-  
+## Router
+: 
+
+#### 자세한 실습 내용은 [velopert님 블로그](https://velopert.com/3417) 참고
 참고) https://poiemaweb.com/js-spa / https://linked2ev.github.io/devlog/2018/08/01/WEB-1.-What-is-SPA/ /
