@@ -14,10 +14,10 @@
 ## Router
 : 
 
-#### React-Router 설치
+#### 1. React-Router 설치
 <pre><code>$ yarn add react-router-dom</code></pre>
 
-#### NOTH_PATH 설정 - 파일 import시 절대 경로로 불러오도록
+#### 2. NOTH_PATH 설정 - 파일 import시 절대 경로로 불러오도록
 <pre><code><b>package.json에서 script 설정 부분</b>
 
 "start": "NODE_PATH=src react-scripts start",
@@ -30,7 +30,7 @@
 "start": "<b>cross-env</b> NODE_PATH=src react-scripts start",
 "build": "<b>cross-env</b> NODE_PATH=src react-scripts build",</code></pre>
 
-#### BrowserRouter 적용 - HTML5의 history API를 사용하여 페이지의 리로드 없이 주소를 교체할 수 있도록
+#### 3. BrowserRouter 적용 - HTML5의 history API를 사용하여 페이지의 리로드 없이 주소를 교체할 수 있도록
 <pre><code><b>src/Root.js //최상위 루트 컴포넌트</b>
 
 (...)
@@ -46,7 +46,7 @@ const Root = () => {
 };
 </code></pre>
 
-#### 라우트 설정
+#### 4. 라우트 설정
 <pre><code><b>src/App.js</b>
 
 (...)
@@ -58,10 +58,64 @@ const App = () => {
       <'/div>
   );
 };
-</code></pre>
+</code></pre><br/>
 
-#### 라우트 파라미터
-라우트의 경로로 특정 값을 넣는 방법 : 1)parmas 사용 2)Query String 사용 
+### 라우트 파라미터
+라우트의 경로로 특정 값을 넣는 방법 : 1) parmas 사용 2) Query String 사용 <br/>
+1. params
+<pre><code><b>src/App.js</b>
+
+(...)
+const App = () => {
+   return (
+      <'div>
+         <'Route exact path="/" component={Home}/>
+         <b><'Route exact path="/about" component={About}/>
+         <'Route path="/about/:name" component={About}/></b>
+         
+         or 
+         
+         <'Route exact path="/" component={Home}/>
+         <b><'Route path="/about/:name?" component={About}/></b> 
+      <'/div>
+  );
+};
+</code></pre>
+<pre><code><b>src/pages/About.js</b>
+
+(...)
+const About = ({match}) => {
+    return (
+        <'div>
+            <'h2>소개<'/h2>
+            <'p>안녕하세요. 저는 {match.params.name} 라우터입니다.<'/p>
+        <'/div>
+    );
+};
+</code></pre><br/>
+
+2. Query String
+<pre><code>$ yarn add query-string</code></pre>
+<pre><code><b>src/pages/About.js</b>
+
+import React from 'react';
+import queryString from 'query-string';
+
+const About = ({location, match}) => {
+    const query = queryString.parse(location.search);
+
+    const {color} = query;
+
+    return (
+        <'div>
+            <'h2 style={{color}}>소개<'/h2>
+            <'p>안녕하세요. 저는 {match.params.name} 라우터입니다.<'/p>
+        <'/div>
+    );
+};
+</code></pre><br/>
+
+### 라우트 이동
 
 
 #### 자세한 실습 내용은 [velopert님 블로그](https://velopert.com/3417) 참고
