@@ -116,7 +116,7 @@ const About = ({location, match}) => {
 </code></pre><br/>
 
 ### 라우트 이동
-**Link 컴포넌트**
+**1. Link 컴포넌트**
 <pre><code><b>src/components/Menu.js</b>
 
 import React from 'react';
@@ -140,7 +140,7 @@ const Menu = () => {
 };
 </code></pre> 
 
-**NavLink 컴포넌트 - 현재 주소와 해당 컴포넌트의 목적지 주소가 일치하면 특정 스타일 혹은 클래스 지정 가능** 
+**2. NavLink 컴포넌트 - 현재 주소와 해당 컴포넌트의 목적지 주소가 일치하면 특정 스타일 혹은 클래스 지정 가능** 
 <pre><code><b>src/components/Menu.js</b>
 
 import React from 'react';
@@ -164,21 +164,23 @@ const Menu = () => {
 };
 </code></pre> 
 
-**자바스크립트에서 라우팅 - EX)로그인을 성공했을때 특정 경로로 이동시켜주어야 하는 액션** 
+**3. 자바스크립트에서 라우팅 - EX)로그인을 성공했을때 특정 경로로 이동시켜주어야 하는 액션** 
 <pre><code><b>src/pages/Home.js</b>
 
 import React from 'react';
 
 const Home = ({history}) => { // 라우트된 컴포넌트가 받아오는 props중 하나인 history객체 이용
     return (
-        <div>
-            <h2>홈</h2>
-            <button onClick={()=>{history.push('/about/javascript')}}>자바스크립트를 사용하여 이동</button>
+        <'div>
+            <'h2>홈</h2'>
+            <'button onClick={()=>{history.push('/about/javascript')}}>자바스크립트를 사용하여 이동<'/button>
                                  //history객체의 push 함수 이용하여 라우팅
-        </div>
+        <'/div>
     );
 };
 </code></pre> 
+
+### 라우트 안의 라우트
 
 
 #### 자세한 실습 내용은 [velopert님 블로그](https://velopert.com/3417) 참고
