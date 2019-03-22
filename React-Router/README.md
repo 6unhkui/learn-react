@@ -1,6 +1,6 @@
 # React-Router
 ## SPA (Single Page Application)
-: 단일 페이지 어플리케이션. <br/>
+: 단일 페이지 애플리케이션. <br/>
   전통적인 페이지는 여러 페이지로 구성되어 유저가 요청할때마다 서버에서 리소스와 데이터를 전달받아 <br/>
   해석한 후 렌더링한다. 웹에서 제공하는 데이터량이 많아지면서 속도 문제가 야기되고, <br/>
   이를 해결하기 위해 캐싱과 압축 서비스(css,js 리소스 등을 cdn 형태로)를 제공하지만 <br/>
@@ -12,7 +12,6 @@
   필요한 데이터만 전달받아 보여주기 때문에 전체적인 트래픽을 감소할 수 있다. <br/><br/>
   
 ## Router
-: 
 
 #### 1. React-Router 설치
 <pre><code>$ yarn add react-router-dom</code></pre>
