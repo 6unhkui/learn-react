@@ -13,10 +13,10 @@ const Todo = types
    }));
 
 const TodoStore = types
-   .model("TodoStore", {
+   .model("TodoStore", { // observable 상태 생성
        todos : types.array(Todo)
    })
-   .views(self => ({
+   .views(self => ({ // computed 정의
        get todoCount() {
            return self.todos.length;
        },
@@ -24,13 +24,13 @@ const TodoStore = types
            return self.todos.filter(todo => todo.done === true).length;
        }
    }))
-   .actions(self => ({
+   .actions(self => ({ // action 정의
        addTodo(todo) {
            self.todos.push(todo);
        },
        deleteTodo(id) {
            self.todos = self.todos.filter(t => t.id !== id);
        }
-   }));
+   }))
 
 export default TodoStore;
