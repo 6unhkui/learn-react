@@ -12,7 +12,7 @@ import {
 import TodoStore from './stores/TodoStore';
 import "antd/dist/antd.css";
 
-
+@observer
 class App extends Component {
   constructor() {
     super();
@@ -85,4 +85,4 @@ class App extends Component {
   }
 }
 
-export default observer(App);
+export default App;
