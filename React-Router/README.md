@@ -179,8 +179,5 @@ const Home = ({history}) => { // 라우트된 컴포넌트가 받아오는 props
 };
 </code></pre> 
 
-### 라우트 안의 라우트
-
-
 #### 자세한 실습 내용은 [velopert님 블로그](https://velopert.com/3417) 참고
 참고) https://poiemaweb.com/js-spa / https://linked2ev.github.io/devlog/2018/08/01/WEB-1.-What-is-SPA/ /
