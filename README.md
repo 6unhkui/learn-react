@@ -2,7 +2,7 @@
 #### [React-Router](https://github.com/siminkyung/react-study/tree/master/React-Router)
 
 ### etc
-#### [React-UI-Components](https://github.com/siminkyung/react-study/tree/master/React-UI-Components)
+#### [React-UI-Components](https://docs.google.com/presentation/d/1GPhP4qPJWqvy1AE8fBva5vjCbE69MH-jGaS7ucMowBk/edit?usp=sharing)
 
 ---
 
@@ -16,4 +16,4 @@
 
 
 
-**#모든 학습 내용은 [velopert님 블로그](https://velopert.com/)와 리액트를 다루는 기술 참고**
+**#모든 학습 내용은 [velopert님 블로그](https://velopert.com/)와 리액트를 다루는 기술 참고하였습니다 :)**
