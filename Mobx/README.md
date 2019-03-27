@@ -25,7 +25,7 @@ Action 역시도 성능 최적화에 사용되며, Redux와 달리 객체상태�
 : Coumputed Value와 비슷하지만 Coumputed Value가 특정 값을 연산할때만 처리되는 반면<br/>
 Reaction은 값이 바뀔때마다 할일을 정한다. observable 값의 내부의 값이 바뀔때마다 호출 할 수 있다.<br/>
 
-### @Mobx Data Flow
+### @ Mobx Data Flow
 <img src="https://user-images.githubusercontent.com/41765537/55053029-396cd780-509e-11e9-8ad0-ae538c55ec03.png" width="800"></img><br/>
 
 ### @ Mobx 설치
