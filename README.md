@@ -2,7 +2,7 @@
 #### [React-Router](https://github.com/siminkyung/react-study/tree/master/React-Router)
 
 ### etc
-#### [React-UI-Components](https://docs.google.com/presentation/d/1GPhP4qPJWqvy1AE8fBva5vjCbE69MH-jGaS7ucMowBk/edit?usp=sharing)
+#### [React-UI-Components]
 
 ---
 
