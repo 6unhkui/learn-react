@@ -48,7 +48,8 @@ decorator를 사용하기 위해서는 babel 설정을 커스터마이징 해야
   }
 </code></pre>
 
-*Experimental support for decorators is a feature that is subject to change in a future release 에러가 뜰 경우*<br/>
+
+* *Experimental support for decorators is a feature that is subject to change in a future release 에러가 뜰 경우*<br/>
 In VSCode, Go to File => Preferences => Settings (or Control+comma) and it will open the User Settings file.<br/>
 Add "javascript.implicitProjectConfig.experimentalDecorators": true 변경<br/>
 
