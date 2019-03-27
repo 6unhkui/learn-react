@@ -1,7 +1,7 @@
 ## Mobx를 사용하여 슈퍼마켓 구현하기
 ### @ src 내부 디렉토리 구조
 - components : 컴포넌트 저장 <br/>
-- stores : MobX observable, action, computed 정의. <br/>
+- stores : MobX observable, action, computed 정의.
   * store간에 관계를 형성할땐 root store를 만들어 다른 스토어들을 불러오고 <br/>
     constructor에서 각 스토어를 불러온 다음에, this.스토어명 = new 새로운스토어(this)로 입력해준다.<br/>
     각각의 store에 this로 root store를 넣어주었으니 이를 받아주는 생성자를 각 store에 추가해준다.
