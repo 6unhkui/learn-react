@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 //import { Provider } from 'mobx-react';
-import store from './stores/PostStore';
+import Poststore from './stores/PostStore';
+
+const store = Poststore.create({posts : []});
 
 ReactDOM.render(<App store={store}/>, document.getElementById('root'));
 

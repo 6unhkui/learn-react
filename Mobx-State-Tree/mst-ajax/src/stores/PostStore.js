@@ -3,25 +3,30 @@ import axios from 'axios';
 
 const Post = types.model('Post', {
        userId : types.number,
-       id : types.number,
+       id : types.identifier(types.number),
        title : types.string,
        body : types.string     
-    });
+    }
+);
 
 const PostStore = types.model('PostStore', {
-       postData : types.array(Post)
+       posts : types.array(Post),
+       isLoading : true
     })
     .actions(self => ({
-        setData(data) {
-          //self.postData.push(data);
-          console.log(data);  
+        doneLoading(loading) {
+           self.isLoading = loading;
         },
-        getData() {
-           axios.get('https://jsonplaceholder.typicode.com/posts')
-           .then( response => {
-              self.setData(response.data)
-           }) 
-        }
+        setPostList(data) {
+          data.map(post => self.posts.push(post));
+        },
+        getPosts() {
+           axios('https://jsonplaceholder.typicode.com/posts')
+             .then((response) => {
+                self.doneLoading(false);
+                self.updatePostList(response.data);
+             })
+        }, 
     }));
 
 export default PostStore;
