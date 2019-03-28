@@ -75,4 +75,4 @@ module.exports = function override(config) {
   return config;
 }
 </code></pre>
-참고) [주노준호님 - Create-react-app Mobx, Router 환경 구성](https://junojunho.com/front-end/create-react-app-with-mobx/)
+참고) [주노준호님 - Create-react-app Mobx, Router 환경 구성](https://junojunho.com/front-end/create-react-app-with-mobx)
