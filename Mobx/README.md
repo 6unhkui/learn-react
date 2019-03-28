@@ -32,8 +32,13 @@ Reaction은 값이 바뀔때마다 할일을 정한다. observable 값의 내부
 <pre><code>$ yarn add mobx mobx-react</code></pre>
 
 ### @ Decorator와 함께 사용하기
-decorator를 사용하기 위해서는 babel 설정을 커스터마이징 해야한다.
-<pre><code>$ yarn add @babel/plugin-proposal-class-properties @babel/plugin-proposal-decorators</code></pre>
+decorator를 사용하기 위해서는 babel 설정을 추가해줘야 한다.
+- decorator 모듈 패키지 설치 
+<pre><code>$ yarn add @babel/plugin-proposal-decorators</code></pre>
+
+- create-react-app의 기본 환경에서는 babel 설정을 커스터마이징 할 수 없으므로 추가적인 작업이 필요함
+1) yarn eject으로 웹팩 설정을 외부로 꺼낸 후에 변경하는 방법
+<pre><code>$ yarn eject</code></pre>
 
 <pre><code><b>package.json</b>에서 수정
 
@@ -49,7 +54,25 @@ decorator를 사용하기 위해서는 babel 설정을 커스터마이징 해야
 </code></pre>
 
 
-* *Experimental support for decorators is a feature that is subject to change in a future release 에러가 뜰 경우*<br/>
+*Experimental support for decorators is a feature that is subject to change in a future release 에러가 뜰 경우?*<br/>
 In VSCode, Go to File => Preferences => Settings (or Control+comma) and it will open the User Settings file.<br/>
 Add "javascript.implicitProjectConfig.experimentalDecorators": true 변경<br/>
 
+2) 이미 최적화된 create-react-app을 그대로 사용하는 방법 (react-app-rewired)
+react-app-rewired를 사용하여 리액트 스크립트의 웹팩 설정에 새로운 바벨 설정을 주입하기
+<pre><code>$ yarn add react-app-rewired</code></pre>
+
+프로젝트 루트 디렉토리에
+<pre><code><b>config-overrides.js</b>
+
+const { injectBabelPlugin } = require('react-app-rewired');
+
+module.exports = function override(config) {
+  config = injectBabelPlugin(['@babel/plugin-proposal-decorators', {
+    "legacy": true
+  }], config);
+
+  return config;
+}
+</code></pre>
+참고) [주노준호님 - Create-react-app Mobx, Router 환경 구성](https://junojunho.com/front-end/create-react-app-with-mobx/)
