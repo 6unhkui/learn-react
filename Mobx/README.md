@@ -58,7 +58,7 @@ decorator를 사용하기 위해서는 babel 설정을 추가해줘야 한다.
 In VSCode, Go to File => Preferences => Settings (or Control+comma) and it will open the User Settings file.<br/>
 Add "javascript.implicitProjectConfig.experimentalDecorators": true 변경<br/>
 
-2) 이미 최적화된 create-react-app을 그대로 사용하는 방법 (react-app-rewired)
+2) 이미 최적화된 create-react-app을 그대로 사용하는 방법 (react-app-rewired) <br/>
 react-app-rewired를 사용하여 리액트 스크립트의 웹팩 설정에 새로운 바벨 설정을 주입하기
 <pre><code>$ yarn add react-app-rewired</code></pre>
 
