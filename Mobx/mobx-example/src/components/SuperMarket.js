@@ -8,7 +8,7 @@ const SuperMarket = () => {
   return <SuperMarketTemplate 
               items={<ShopItemList />}  
               basket={<BasketItemList />}
-              total = {<TotalPrice/>} />;
+              total = {<TotalPrice />} />;
 };
 
 export default SuperMarket;

@@ -32,5 +32,8 @@ const TodoStore = types
            self.todos = self.todos.filter(t => t.id !== id);
        }
    }))
+   .create({
+       todos : [],
+   })
 
 export default TodoStore;
