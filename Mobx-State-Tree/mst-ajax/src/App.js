@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import { observer } from "mobx-react";
+import { Header } from './components';
+import { PostPage } from './pages';
+import DevTools from 'mobx-react-devtools';
 
-@observer
 class App extends Component {
   render() {
     return (
       <>
-        <p>test</p>
+        <Header/>
+        <PostPage/>
+        {process.env.NODE_ENV === 'development' && <DevTools />}
       </>
     );
   }
