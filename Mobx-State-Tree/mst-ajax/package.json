@@ -65,7 +65,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -133,5 +135,9 @@
         }
       ]
     ]
+  },
+  "homepage": "http://siminkyung.github.io/react-study/tree/master/Mobx-State-Tree/mst-ajax",
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
   }
 }
