@@ -1,5 +1,6 @@
 import React from 'react';
-import {Comment} from './';
+import { observer,inject } from 'mobx-react';
+import Comment from './Comment';
 import './CommentList.css';
 
 const CommentList = ({comments}) => {
@@ -13,10 +14,12 @@ const CommentList = ({comments}) => {
 
     return (
         <ul className="CommentList">
+           {console.log('CommentList render')}
            {commentList}
         </ul>
     );
 };
 
-
-export default CommentList;
+export default inject(({store}) => ({
+    comments: store.comments
+  }))(observer(CommentList));

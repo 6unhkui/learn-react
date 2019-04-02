@@ -5,9 +5,10 @@ import { observer,inject } from 'mobx-react';
 @inject('store')
 @observer
 class PostPage extends Component {
-
-    componentWillMount() {
-        this.props.store.getList(1);
+    
+    componentDidMount() {
+        console.log('componentDidMount-----------');
+        this.props.store.getList();
     }
 
     handleNavigateClick = (type) => {
@@ -16,16 +17,15 @@ class PostPage extends Component {
         if(type === 'NEXT') {
             this.props.store.setPostId(postId+1);
         } else {
-            this.props.store.setPostId(postId-1);
+            if(postId > 1) this.props.store.setPostId(postId-1);
         }
     }
 
     _renderPost = () => { 
-        const content = this.props.store.posts[0];
-        const {comments} = this.props.store;
-        console.log('content');
-        const posts = this.props.store.posts.map(() => {
-            return <Post contents = {content} comments = {comments} key={content.id}/>
+        console.log(' _renderPost-----------');
+ 
+        const posts = this.props.store.posts.map((post, index) => {
+            return <Post body={post.body} title = {post.title} key={index}/>
         })
      
         return posts;
@@ -35,12 +35,12 @@ class PostPage extends Component {
         const {isLoading, postId} = this.props.store;
 
         return (
-            <>
+            <div>
             <PostWrapper>
                 <Navigator postId={postId} onClick={this.handleNavigateClick} />
                 {isLoading? 'Loading' : this._renderPost()}
             </PostWrapper>
-            </>
+            </div>
         );
     }
 }

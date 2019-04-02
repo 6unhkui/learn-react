@@ -6591,10 +6591,10 @@ mobx-state-tree@^3.12.2:
   resolved "https://registry.yarnpkg.com/mobx-state-tree/-/mobx-state-tree-3.12.2.tgz#4bc8ab0303d1bba222627091c3db311c7de19ee9"
   integrity sha512-l6c4litG9igU4BgQmZYu3bBaXMZnxJiuJzIrfNzV4tDTjuejAOuTM/P2tiPiC2QUsjdqCaDpnieLkpezwBzMIg==
 
-mobx@^5.9.0:
-  version "5.9.0"
-  resolved "https://registry.yarnpkg.com/mobx/-/mobx-5.9.0.tgz#a08edd7132787f771409c9c33788a5df66ff7ce7"
-  integrity sha512-D3mY1uM3H9BP5duk5tTanrOq92yqetYKsprPJWvkKDrbs+fro59xrpWX+vtr10YoLgJIFz+a4A8lI+4YtqmCUQ==
+mobx@4.9.4:
+  version "4.9.4"
+  resolved "https://registry.yarnpkg.com/mobx/-/mobx-4.9.4.tgz#bb37a0e4e05f0b02be89ced9d23445cad73377ad"
+  integrity sha512-RaEpydw7D1ebp1pdFHrEMZcLk4nALAZyHAroCPQpqLzuIXIxJpLmMIe5PUZwYHqvlcWL6DVqDYCANZpPOi9iXA==
 
 move-concurrently@^1.0.1:
   version "1.0.1"
@@ -8064,6 +8064,11 @@ promise-inflight@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/promise-inflight/-/promise-inflight-1.0.1.tgz#98472870bf228132fcbdd868129bad12c3c029e3"
   integrity sha1-mEcocL8igTL8vdhoEputEsPAKeM=
+
+promise-polyfill@^8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/promise-polyfill/-/promise-polyfill-8.1.0.tgz#30059da54d1358ce905ac581f287e184aedf995d"
+  integrity sha512-OzSf6gcCUQ01byV4BgwyUCswlaQQ6gzXc23aLQWhicvfX9kfsUiUhgt3CCQej8jDnl8/PhGF31JdHX2/MzF3WA==
 
 promise@8.0.2:
   version "8.0.2"
