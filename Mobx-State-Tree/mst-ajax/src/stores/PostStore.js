@@ -30,37 +30,34 @@ const PostStore = types
     .actions(self => ({
         doneLoading(loading) { // 로딩
            self.isLoading = loading;
-        },
+        }, //end doneLoading()
 
         setPost(data) { // 게시글 데이터 MODEL에 넣어주기
           self.posts = data;
-        },
+        }, //end setPost()
+
+        setComments(data) { // 댓글 데이터 MODEL에 넣어주기
+         self.comments = data;
+        }, //end setComments()
 
         setPostId(num){ // postId 카운트
            self.postId = num; // navigate 클릭시 count되고, count된 값을 postId에 넣어줌
-           self.getList(); //List 반영
-        },
+           self.getList(); // getList()에 변경된 postId를 반영
+        }, //end setPostId()
 
-        setCommentsList(data) { // 댓글 데이터 MODEL에 넣어주기
-          self.comments = data;
-        },
-        
-        getList() { // 게시글 데이터 받기
-           console.log('store getListAPI');
-           
-           axios.get(`https://jsonplaceholder.typicode.com/posts?id=${self.postId}`)
-             .then((response) => {
-                self.doneLoading(false);
-                self.setPost(response.data);
-             })
-             .catch( err => console.log(err));
+        async getList() { // post, comment 서버 통신
+           // async, await를 이용해 비동기적으로 데이터를 받아와 동기적으로 뿌려준다
+           try {
+              const getPost = await axios.get('https://jsonplaceholder.typicode.com/posts?id='+self.postId);
+              const getComment = await axios.get('https://jsonplaceholder.typicode.com/comments?postId='+self.postId);
 
-           axios.get(`https://jsonplaceholder.typicode.com/comments?postId=${self.postId}`)
-             .then((response) => {
-                self.setCommentsList(response.data);
-             })
-             .catch( err => console.log(err));
-        }
+              self.doneLoading(false);
+              self.setPost(getPost.data);
+              self.setComments(getComment.data);
+           }catch (error) {
+              console.log(error);
+           }
+        } //end getList()
     }));
 
     

@@ -1,0 +1,9 @@
+GET http://localhost:3000 HTTP/1.1
+
+GET http://localhost:3000/user/sdsww HTTP/1.1
+
+POST http://localhost:3000/user/ HTTP/1.1
+
+PUT http://localhost:3000/user/ HTTP/1.1
+
+DELETE http://localhost:3000/user/ HTTP/1.1

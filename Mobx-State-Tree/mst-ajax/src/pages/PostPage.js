@@ -8,6 +8,8 @@ class PostPage extends Component {
     
     componentDidMount() {
         console.log('componentDidMount-----------');
+        //this.props.store.getPostList();
+        //this.props.store.getCommentList();
         this.props.store.getList();
     }
 
@@ -23,7 +25,7 @@ class PostPage extends Component {
 
     _renderPost = () => { 
         console.log(' _renderPost-----------');
- 
+        
         const posts = this.props.store.posts.map((post, index) => {
             return <Post body={post.body} title = {post.title} key={index}/>
         })
