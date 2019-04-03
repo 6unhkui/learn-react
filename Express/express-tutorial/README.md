@@ -1,7 +1,7 @@
 # Express
 
 **기본 라우팅**
-<b>app.MATHOD(PATH, HANDLER)</b><br/><br/>
+<b>app.MATHOD(PATH, HANDLER)</b>
 
 - MATHOD : http 요청 메소드 - get, post, delete, put ...<br/>
 - PATH : 라우트 경로<br/>
@@ -53,11 +53,9 @@ app.use('/user', user); // use() :미들웨어를 애플리케이션에 등록
 : 요청 오브젝트(req), 응답 오브젝트(res), 그리고 애플리케이션의 요청-응답 주기중 <br/>
 그 다음의 미들웨어 함수에 대한 액세스 권한을 갖는 함수 <br/>
 http 요청 ----미들웨어----> 라우트 작업<br/>
-<------------------------- http 응답<br/>
-<br/>
-
-<pre><code>미들웨어 생성 후 추가
-<b>main.js</b>
+<--------------------------- http 응답<br/>
+미들웨어 생성 후 추가
+<pre><code><b>main.js</b>
 (...)
 var myLogger = function(req, res, next) {
     console.log(req.url);
