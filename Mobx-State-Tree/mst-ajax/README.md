@@ -2,4 +2,4 @@
 - http client 라이브러리로 axios 사용
   - fetch api와 axios 비교 포스트를 참고하여 axios가 react에서 사용하기에 성능상(구형 브라우저와의 호환성, abort 지원 등) 적합함을 알았습니다.
   - [axios와 fetch 어떤것을 사용할까?](https://hoorooroob.tistory.com/1) / [axios 라이브러리 사용](http://www.realhanbit.co.kr/books/87/pages/1563/preview) / [내가 fetch API를 쓰지 못했던 이유](https://medium.com/little-big-programming/%EB%82%B4%EA%B0%80-fetch-api%EB%A5%BC-%EC%93%B0%EC%A7%80-%EB%AA%BB%ED%96%88%EB%8D%98-%EC%9D%B4%EC%9C%A0-3c23f0ec6b82)
-- 작업 후 테스트중 ie에서 동작하지 않는 이슈 발견 => create react app v2와 mobx 5.x 버전에서는 ie를 미지원 => polyfill 적용, mobx 버전 다운그레이드
+- 작업 후 테스트중 ie에서 동작하지 않는 이슈 발견 => create react app v2와 mobx 5.x 버전에서는 ie를 미지원 => [polyfill 적용, mobx 버전 다운그레이드](https://github.com/siminkyung/react-study/tree/master/ETC)
