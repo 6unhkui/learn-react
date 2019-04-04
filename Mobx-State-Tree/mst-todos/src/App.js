@@ -32,6 +32,11 @@ class App extends Component {
         description : e.currentTarget.value,
         duration : 2
       });
+
+      this.input.focus();
+      this.input.setState({
+        value : ''
+      });
     }
   }
 
@@ -54,6 +59,7 @@ class App extends Component {
                type = "text"
                onKeyDown = {this.handleAddTodo}
                style = {inputStyle}
+               ref = {(ref) => this.input=ref}
             />
 
         <div className="todos-stats">

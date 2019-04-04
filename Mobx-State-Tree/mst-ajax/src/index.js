@@ -3,22 +3,13 @@ import 'react-app-polyfill/ie11'; // For IE 11 support
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Root from './Root';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'mobx-react';
 import Poststore from './stores/PostStore';
 
-/*
-import 'babel-polyfill';
-//IE Promise Support
-import Promise from 'promise-polyfill';
-if (!window.Promise) {
-  window.Promise = Promise;
-}
-*/
-
 const store = Poststore.create();
 
-ReactDOM.render(<Provider store={store}><App/></Provider>, document.getElementById('root'));
+ReactDOM.render(<Provider store={store}><Root/></Provider>, document.getElementById('root'));
 
 serviceWorker.unregister();

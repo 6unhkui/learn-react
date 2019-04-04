@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Header } from './components';
-import { PostPage } from './pages';
+import { PostPage, UserPage } from './pages';
+import { Route } from 'react-router-dom';
 import DevTools from 'mobx-react-devtools';
 
 class App extends Component {
@@ -9,6 +10,8 @@ class App extends Component {
       <>
         <Header/>
         <PostPage/>
+        <Route exact path="/" Component={PostPage}/>
+        <Route exact path="/user" Component={UserPage}/>
         {process.env.NODE_ENV === 'development' && <DevTools />}
       </>
     );
