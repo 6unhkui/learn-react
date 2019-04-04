@@ -1,1 +1,5 @@
-# MST - REST API 서버와 연동하여 비동기 작업
+- api 서버는 페이크 rest api 서버를 사용
+- http client 라이브러리로 axios 사용
+  - fetch api와 axios 비교 포스트를 참고하여 axios가 react에서 사용하기에 성능상(구형 브라우저와의 호환성, abort 지원 등) 적합함을 알았습니다.
+  - axios와 fetch 어떤것을 사용할까? / axios 라이브러리 사용 / 내가 fetch API를 쓰지 못했던 이유
+- 작업 후 테스트중 ie에서 동작하지 않는 이슈 발견 => create react app v2와 mobx 5.x 버전에서는 ie를 미지원 => polyfill 적용, mobx 버전 다운그레이드
