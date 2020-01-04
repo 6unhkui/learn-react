@@ -1,4 +1,4 @@
-# react-study
+# React Study Log
 #### [React-Router](https://github.com/siminkyung/react-study/tree/master/React-Router)
 
 ---
@@ -16,4 +16,4 @@
 ---
 ## [ETC](https://github.com/siminkyung/react-study/tree/master/ETC)
 
-**#모든 학습 내용은 [velopert님 블로그](https://velopert.com/)와 리액트를 다루는 기술 참고하였습니다 :)**
+**# 모든 학습 내용은 [velopert님 블로그](https://velopert.com/)와 '리액트를 다루는 기술' 을 참고하였습니다**
