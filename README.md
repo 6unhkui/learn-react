@@ -1,16 +1,16 @@
-# React Study Log
+# Learn React
 #### [React-Router](https://github.com/siminkyung/react-study/tree/master/React-Router)
 
 ---
 
 ## Redux
-#### [01. 기초](https://github.com/siminkyung/react-study/tree/master/Redux/)
-#### [02. 리덕스 미들웨어](https://github.com/siminkyung/react-study/tree/master/Redux_Middleware)
+#### [기본 개념](https://github.com/siminkyung/react-study/tree/master/Redux/)
+#### [리덕스 미들웨어](https://github.com/siminkyung/react-study/tree/master/Redux_Middleware)
 
 ---
 
 ## Mobx
-#### [01. 기초](https://github.com/siminkyung/react-study/tree/master/Mobx)
+#### [기본 개념](https://github.com/siminkyung/react-study/tree/master/Mobx)
 #### [Mobx-State-Tree](https://github.com/siminkyung/react-study/tree/master/Mobx-State-Tree)
 
 ---
