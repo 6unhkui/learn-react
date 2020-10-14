@@ -1,4 +1,6 @@
 # Learn React
+> [velopert님 블로그](https://velopert.com/)와 '리액트를 다루는 기술'에서 공부한 내용을 정리하였습니다
+
 #### [React-Router](https://github.com/siminkyung/react-study/tree/master/React-Router)
 
 ---
@@ -15,5 +17,3 @@
 
 ---
 ## [ETC](https://github.com/siminkyung/react-study/tree/master/ETC)
-
-**# 모든 학습 내용은 [velopert님 블로그](https://velopert.com/)와 '리액트를 다루는 기술' 을 참고하였습니다**
